@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FixIt - A campus issue reporting system that helps students report problems and track their resolution.">
+  <title>FixIt – Campus Issue Reporting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
+  <!-- ===== HEADER (same on every page; only move class="active") ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="FixIt home">
+        <span class="logo-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#021F28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><path d="M8.5 10l2.5 2.5L15.5 8"/></svg>
+        </span>
+        Fix<b>It</b>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="menu">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="report.html" class="nav-cta">Report an Issue</a>
+        <a href="reports.html">View Reports</a>
+        <a href="about.html">About / Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <span class="tagline">See a problem. Report it. Help fix it.</span>
+      <h1>Help Make Our <span>Campus Better.</span></h1>
+      <p>Report broken facilities, water shortages, faulty electricity and more. Follow your report from submission to resolution, no account needed.</p>
+      <div class="hero-actions">
+        <a href="report.html" class="btn">Report an Issue →</a>
+        <a href="reports.html" class="btn btn-outline">View Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+
+      <!-- ===== STATISTICS ===== -->
+      <section aria-label="Campus reporting statistics">
+        <div class="grid">
+          <article class="card stat-card"><div class="stat-icon tint-coral" aria-hidden="true">📋</div><div><span class="stat-value">128</span><span class="stat-label">Total Reports</span></div></article>
+          <article class="card stat-card"><div class="stat-icon tint-peach" aria-hidden="true">⏳</div><div><span class="stat-value">34</span><span class="stat-label">Pending Issues</span></div></article>
+          <article class="card stat-card"><div class="stat-icon tint-sky" aria-hidden="true">🔧</div><div><span class="stat-value">21</span><span class="stat-label">Issues in Progress</span></div></article>
+          <article class="card stat-card"><div class="stat-icon tint-leaf" aria-hidden="true">✅</div><div><span class="stat-value">73</span><span class="stat-label">Resolved Issues</span></div></article>
+        </div>
+      </section>
+
+      <!-- ===== CATEGORIES (each opens View Reports filtered by that category) ===== -->
+      <section>
+        <h2 class="section-title">Common issue categories</h2>
+        <p class="section-sub">Pick a category to see related reports.</p>
+        <div class="grid">
+          <a href="reports.html?category=facilities" class="category-card cat-facilities"><span aria-hidden="true">🛠️</span><span>Facilities &amp; Repairs</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=electricity" class="category-card cat-electricity"><span aria-hidden="true">⚡</span><span>Electricity</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=water" class="category-card cat-water"><span aria-hidden="true">💧</span><span>Water &amp; Plumbing</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=internet" class="category-card cat-internet"><span aria-hidden="true">📶</span><span>Internet &amp; IT</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=cleanliness" class="category-card cat-cleanliness"><span aria-hidden="true">🧹</span><span>Cleanliness &amp; Waste</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=safety" class="category-card cat-safety"><span aria-hidden="true">🛡️</span><span>Safety &amp; Security</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=accessibility" class="category-card cat-accessibility"><span aria-hidden="true">♿</span><span>Accessibility</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="reports.html?category=other" class="category-card cat-other"><span aria-hidden="true">💬</span><span>Other</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- ===== RECENT REPORTS (same sample reports as reports.html; each opens its details page) ===== -->
+      <section>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+          <h2 class="section-title">Recent reports</h2>
+          <a href="reports.html" class="btn btn-outline btn-sm">View All Reports →</a>
+        </div>
+
+        <a href="details.html?ref=FIX-2026-00124" class="card report-row">
+          <span class="stat-icon tint-coral" aria-hidden="true">⚡</span>
+          <div><strong>Broken lights in the main library</strong><div class="meta">📍 Main Library · 19 Oct 2026 · Electricity</div></div>
+          <span class="badge badge-progress">● In Progress</span>
+        </a>
+        <a href="details.html?ref=FIX-2026-00123" class="card report-row">
+          <span class="stat-icon tint-sky" aria-hidden="true">💧</span>
+          <div><strong>Water leakage near the science block</strong><div class="meta">📍 Science Block · 18 Oct 2026 · Water &amp; Plumbing</div></div>
+          <span class="badge badge-pending">● Pending</span>
+        </a>
+        <a href="details.html?ref=FIX-2026-00121" class="card report-row">
+          <span class="stat-icon tint-peach" aria-hidden="true">🧹</span>
+          <div><strong>Overflowing waste bins near the cafeteria</strong><div class="meta">📍 Cafeteria · 15 Oct 2026 · Cleanliness &amp; Waste</div></div>
+          <span class="badge badge-resolved">● Resolved</span>
+        </a>
+      </section>
+
+      <!-- ===== CALL TO ACTION ===== -->
+      <section>
+        <div class="card tint-teal" style="text-align:center;padding:36px 22px">
+          <h2>Spotted a campus problem?</h2>
+          <p style="margin:12px 0 22px">Your report can help make our campus safer, cleaner and better for everyone.</p>
+          <a href="report.html" class="btn">Report an Issue →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (copy exactly on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>Fix<b>It</b></strong><br>Campus issue reporting for students.</div>
+      <p>© 2026 FixIt. All rights reserved.</p>
+      <a href="staff-login.html" style="color: #0FFFC3;">Staff</a>
+    </div>
+  </footer>
+
+  <!-- Temporary menu toggle for mobile. Move this into common.js later. -->
+  <script>
+    var t = document.getElementById('nav-toggle'), m = document.getElementById('menu');
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
