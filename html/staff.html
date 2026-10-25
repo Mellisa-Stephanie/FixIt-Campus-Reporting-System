@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff View – FixIt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (copy exactly on every page; only move class="active") ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="FixIt home">
+        <span class="logo-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#021F28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><path d="M8.5 10l2.5 2.5L15.5 8"/></svg>
+        </span>
+        Fix<b>It</b>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="menu">
+        <a href="index.html">Home</a>
+        <a href="report.html" class="nav-cta">Report an Issue</a>
+        <a href="reports.html" class="active" aria-current="page">View Reports</a>
+        <a href="about.html">About / Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== STAFF BANNER (pink bar) ===== -->
+  <div class="staff-bar">Staff view · You are now in staff mode <a href="staff-login.html" style="color:#fff;margin-left:8px">Exit</a></div>
+
+  <!-- ===== PAGE BANNER ===== -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>Staff <span>View</span></h1>
+      <p>You are viewing reports as staff. Open a report to update its status or leave a note.</p>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+
+      <!-- ===== SEARCH AND FILTERS ===== -->
+      <div class="filter-bar">
+        <input type="search" id="search" aria-label="Search reports" placeholder="Search title, description, location or reference">
+
+        <select id="filter-category" aria-label="Category">
+          <option value="">All categories</option>
+          <option>Facilities &amp; Repairs</option>
+          <option>Electricity</option>
+          <option>Water &amp; Plumbing</option>
+          <option>Internet &amp; IT</option>
+          <option>Cleanliness &amp; Waste</option>
+          <option>Safety &amp; Security</option>
+          <option>Accessibility</option>
+          <option>Other</option>
+        </select>
+
+        <select id="filter-status" aria-label="Status">
+          <option value="">All statuses</option>
+          <option>Pending</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+        </select>
+
+        <select id="filter-sort" aria-label="Sort order">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+
+        <a href="staff.html" class="btn btn-outline">Clear filters</a>
+      </div>
+
+      <!-- ===== REPORTS: TABLE (desktop) =====
+           These 3 rows are SAMPLES. Later, JavaScript will repeat this one row
+           shape for every report that comes from the API. -->
+      <div class="card table-wrap">
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Issue</th>
+              <th>Category</th>
+              <th>Location</th>
+              <th>Reported</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="reports-body">
+            <tr>
+              <td><strong>FIX-2026-00124</strong></td>
+              <td>Broken lights in the main library</td>
+              <td>Electricity</td>
+              <td>Main Library, 2nd floor reading hall</td>
+              <td>19 Oct 2026</td>
+              <td><span class="badge badge-progress">● In Progress</span></td>
+              <td><a href="staff-details.html?ref=FIX-2026-00124" class="btn btn-outline btn-sm">View Details</a></td>
+            </tr>
+            <tr>
+              <td><strong>FIX-2026-00123</strong></td>
+              <td>Water leakage near the science block</td>
+              <td>Water &amp; Plumbing</td>
+              <td>Science Block, east side near the stairs</td>
+              <td>18 Oct 2026</td>
+              <td><span class="badge badge-pending">● Pending</span></td>
+              <td><a href="staff-details.html?ref=FIX-2026-00123" class="btn btn-outline btn-sm">View Details</a></td>
+            </tr>
+            <tr>
+              <td><strong>FIX-2026-00121</strong></td>
+              <td>Overflowing waste bins near the cafeteria</td>
+              <td>Cleanliness &amp; Waste</td>
+              <td>Cafeteria, outdoor seating area</td>
+              <td>15 Oct 2026</td>
+              <td><span class="badge badge-resolved">● Resolved</span></td>
+              <td><a href="staff-details.html?ref=FIX-2026-00121" class="btn btn-outline btn-sm">View Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===== REPORTS: CARDS (mobile) =====
+           Same 3 reports, shown as cards on small screens (the CSS switches between table and cards). -->
+      <div class="report-cards" id="report-cards">
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:start">
+            <small class="text-muted">FIX-2026-00124</small>
+            <span class="badge badge-progress">● In Progress</span>
+          </div>
+          <h3 style="margin:8px 0 4px">Broken lights in the main library</h3>
+          <p class="text-muted" style="font-size:13px">Electricity · Main Library, 2nd floor reading hall<br>19 Oct 2026</p>
+          <a href="staff-details.html?ref=FIX-2026-00124" class="btn btn-outline btn-sm" style="margin-top:12px">View Details</a>
+        </div>
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:start">
+            <small class="text-muted">FIX-2026-00123</small>
+            <span class="badge badge-pending">● Pending</span>
+          </div>
+          <h3 style="margin:8px 0 4px">Water leakage near the science block</h3>
+          <p class="text-muted" style="font-size:13px">Water &amp; Plumbing · Science Block, east side near the stairs<br>18 Oct 2026</p>
+          <a href="staff-details.html?ref=FIX-2026-00123" class="btn btn-outline btn-sm" style="margin-top:12px">View Details</a>
+        </div>
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:start">
+            <small class="text-muted">FIX-2026-00121</small>
+            <span class="badge badge-resolved">● Resolved</span>
+          </div>
+          <h3 style="margin:8px 0 4px">Overflowing waste bins near the cafeteria</h3>
+          <p class="text-muted" style="font-size:13px">Cleanliness &amp; Waste · Cafeteria, outdoor seating area<br>15 Oct 2026</p>
+          <a href="staff-details.html?ref=FIX-2026-00121" class="btn btn-outline btn-sm" style="margin-top:12px">View Details</a>
+        </div>
+      </div>
+
+      <!-- ===== EMPTY STATE =====
+           Hidden for now. To preview it, delete the word "hidden".
+           JavaScript will show it later when no reports match the search or filters. -->
+      <div class="card empty-state" id="empty-state" hidden>
+        <div style="font-size:42px" aria-hidden="true">🔍</div>
+        <h3 style="margin:8px 0">No reports found. Try changing your filters.</h3>
+        <p class="text-muted" style="margin-bottom:18px">Nothing matches your search yet.</p>
+        <a href="report.html" class="btn">Report a New Issue</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (copy exactly on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>Fix<b>It</b></strong><br>Campus issue reporting for students.</div>
+      <p>© 2026 FixIt. All rights reserved.</p>
+      <a href="staff-login.html" style="color: #0FFFC3;">Staff</a>
+    </div>
+  </footer>
+
+  <!-- Temporary menu toggle for mobile. Move this into common.js later. -->
+  <script>
+    var t = document.getElementById('nav-toggle'), m = document.getElementById('menu');
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
 
