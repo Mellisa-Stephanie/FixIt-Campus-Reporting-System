@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FixIt – Staff</title>
+</head>
+<body>
+<header id="top">
+  <p><strong>FixIt</strong> – Staff</p>
+  <nav><a href="#login">Staff Access</a> | <a href="#manage">Manage Reports</a></nav>
+</header>
+<hr>
+<main>
+  <section id="login">
+    <h1>Staff access</h1>
+    <p>Enter the staff access code to update report statuses and add notes.</p>
+    <p><label for="access-code">Access code *</label><br><input id="access-code" type="password" autocomplete="off"></p>
+    <p><a href="#manage">Unlock</a></p>
+    <p><small>Prototype: plain HTML cannot check a code, so Unlock only jumps to Manage Reports and anyone can open this page.</small></p>
+  </section>
+  <hr>
+  <section id="manage">
+    <h1>Manage Reports</h1>
+    <p>Open a report to update its status or add a note for students.</p>
+  <table border="1">
+    <caption>Campus issue reports (newest first)</caption>
+    <thead>
+    <tr><th>Reference</th><th>Issue</th><th>Category</th><th>Location</th><th>Reported</th><th>Status</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>FIX-2026-00124</td><td>Broken lights in the main library</td><td>Electricity</td><td>Main Library, 2nd floor reading hall</td><td>19 Oct 2026</td><td>In Progress</td>
+      <td><a href="#FIX-2026-00124">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00123</td><td>Water leakage near the science block</td><td>Water &amp; Plumbing</td><td>Science Block, east side near the stairs</td><td>18 Oct 2026</td><td>Pending</td>
+      <td><a href="#FIX-2026-00123">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00122</td><td>Wi‑Fi unavailable in the student centre</td><td>Internet &amp; IT</td><td>Student Centre, ground floor lounge</td><td>17 Oct 2026</td><td>In Progress</td>
+      <td><a href="#FIX-2026-00122">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00121</td><td>Overflowing waste bins near the cafeteria</td><td>Cleanliness &amp; Waste</td><td>Cafeteria, outdoor seating area</td><td>15 Oct 2026</td><td>Resolved</td>
+      <td><a href="#FIX-2026-00121">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00120</td><td>Damaged classroom desks</td><td>Facilities &amp; Repairs</td><td>Lecture Room B2, Humanities Block</td><td>14 Oct 2026</td><td>Pending</td>
+      <td><a href="#FIX-2026-00120">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00119</td><td>Wheelchair ramp blocked at the engineering block</td><td>Accessibility</td><td>Engineering Block, main entrance ramp</td><td>12 Oct 2026</td><td>In Progress</td>
+      <td><a href="#FIX-2026-00119">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00118</td><td>Dark walkway behind the hostels</td><td>Safety &amp; Security</td><td>Path between Hostel A and the Admin Block</td><td>10 Oct 2026</td><td>Pending</td>
+      <td><a href="#FIX-2026-00118">View details</a></td>
+    </tr>
+    <tr>
+      <td>FIX-2026-00117</td><td>Blocked drain outside the Admin block</td><td>Water &amp; Plumbing</td><td>Admin Block, front car park</td><td>7 Oct 2026</td><td>Resolved</td>
+      <td><a href="#FIX-2026-00117">View details</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </section>
+  <hr>
+<article id="FIX-2026-00124">
+  <h2>Broken lights in the main library</h2>
+  <p>Reference: FIX-2026-00124<br>Status: <strong>In Progress</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (done)</li>
+      <li>In Progress (current)</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>Around half of the ceiling lights in the 2nd floor reading hall have been off since Monday. Students are struggling to read during evening study hours.</p>
+  <dl>
+    <dt>Category</dt><dd>Electricity</dd>
+    <dt>Location</dt><dd>Main Library, 2nd floor reading hall</dd>
+    <dt>Date reported</dt><dd>19 Oct 2026</dd>
+    <dt>Last updated</dt><dd>21 Oct 2026</dd>
+    <dt>Priority</dt><dd>High</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>Electrician assigned. Replacement fittings are being sourced. (21 Oct)</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00124">Status</label><br><select id="status-FIX-2026-00124" name="status"><option>Pending</option><option selected>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00124">Note for students</label><br><textarea id="note-FIX-2026-00124" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00123">
+  <h2>Water leakage near the science block</h2>
+  <p>Reference: FIX-2026-00123<br>Status: <strong>Pending</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (current)</li>
+      <li>In Progress</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>A pipe is leaking onto the walkway beside the east stairs, creating a slippery puddle and wasting water.</p>
+  <dl>
+    <dt>Category</dt><dd>Water &amp; Plumbing</dd>
+    <dt>Location</dt><dd>Science Block, east side near the stairs</dd>
+    <dt>Date reported</dt><dd>18 Oct 2026</dd>
+    <dt>Last updated</dt><dd>18 Oct 2026</dd>
+    <dt>Priority</dt><dd>High</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>No updates available yet.</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00123">Status</label><br><select id="status-FIX-2026-00123" name="status"><option selected>Pending</option><option>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00123">Note for students</label><br><textarea id="note-FIX-2026-00123" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00122">
+  <h2>Wi‑Fi unavailable in the student centre</h2>
+  <p>Reference: FIX-2026-00122<br>Status: <strong>In Progress</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (done)</li>
+      <li>In Progress (current)</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>No Wi‑Fi signal in the ground floor lounge since Thursday. The campus network shows up but won’t connect.</p>
+  <dl>
+    <dt>Category</dt><dd>Internet &amp; IT</dd>
+    <dt>Location</dt><dd>Student Centre, ground floor lounge</dd>
+    <dt>Date reported</dt><dd>17 Oct 2026</dd>
+    <dt>Last updated</dt><dd>20 Oct 2026</dd>
+    <dt>Priority</dt><dd>Medium</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>IT team has replaced the access point and is testing the connection. (20 Oct)</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00122">Status</label><br><select id="status-FIX-2026-00122" name="status"><option>Pending</option><option selected>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00122">Note for students</label><br><textarea id="note-FIX-2026-00122" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00121">
+  <h2>Overflowing waste bins near the cafeteria</h2>
+  <p>Reference: FIX-2026-00121<br>Status: <strong>Resolved</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (done)</li>
+      <li>In Progress (done)</li>
+      <li>Resolved (current)</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>The bins by the outdoor seating are overflowing every afternoon, attracting flies.</p>
+  <dl>
+    <dt>Category</dt><dd>Cleanliness &amp; Waste</dd>
+    <dt>Location</dt><dd>Cafeteria, outdoor seating area</dd>
+    <dt>Date reported</dt><dd>15 Oct 2026</dd>
+    <dt>Last updated</dt><dd>16 Oct 2026</dd>
+    <dt>Priority</dt><dd>Low</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>Bins emptied and collection moved to twice daily. (16 Oct)</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00121">Status</label><br><select id="status-FIX-2026-00121" name="status"><option>Pending</option><option>In Progress</option><option selected>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00121">Note for students</label><br><textarea id="note-FIX-2026-00121" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00120">
+  <h2>Damaged classroom desks</h2>
+  <p>Reference: FIX-2026-00120<br>Status: <strong>Pending</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (current)</li>
+      <li>In Progress</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>At least six desks have broken tops and loose legs. Some are unsafe to sit at.</p>
+  <dl>
+    <dt>Category</dt><dd>Facilities &amp; Repairs</dd>
+    <dt>Location</dt><dd>Lecture Room B2, Humanities Block</dd>
+    <dt>Date reported</dt><dd>14 Oct 2026</dd>
+    <dt>Last updated</dt><dd>14 Oct 2026</dd>
+    <dt>Priority</dt><dd>Low</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>No updates available yet.</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00120">Status</label><br><select id="status-FIX-2026-00120" name="status"><option selected>Pending</option><option>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00120">Note for students</label><br><textarea id="note-FIX-2026-00120" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00119">
+  <h2>Wheelchair ramp blocked at the engineering block</h2>
+  <p>Reference: FIX-2026-00119<br>Status: <strong>In Progress</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (done)</li>
+      <li>In Progress (current)</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>Construction materials are stacked on the ramp, leaving no step-free route into the building.</p>
+  <dl>
+    <dt>Category</dt><dd>Accessibility</dd>
+    <dt>Location</dt><dd>Engineering Block, main entrance ramp</dd>
+    <dt>Date reported</dt><dd>12 Oct 2026</dd>
+    <dt>Last updated</dt><dd>15 Oct 2026</dd>
+    <dt>Priority</dt><dd>Medium</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>Facilities team has asked the contractor to clear the ramp. (15 Oct)</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00119">Status</label><br><select id="status-FIX-2026-00119" name="status"><option>Pending</option><option selected>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00119">Note for students</label><br><textarea id="note-FIX-2026-00119" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00118">
+  <h2>Dark walkway behind the hostels</h2>
+  <p>Reference: FIX-2026-00118<br>Status: <strong>Pending</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (current)</li>
+      <li>In Progress</li>
+      <li>Resolved</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>Street lamps along the back path haven’t worked for two weeks, making it unsafe to walk at night.</p>
+  <dl>
+    <dt>Category</dt><dd>Safety &amp; Security</dd>
+    <dt>Location</dt><dd>Path between Hostel A and the Admin Block</dd>
+    <dt>Date reported</dt><dd>10 Oct 2026</dd>
+    <dt>Last updated</dt><dd>10 Oct 2026</dd>
+    <dt>Priority</dt><dd>High</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>No updates available yet.</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00118">Status</label><br><select id="status-FIX-2026-00118" name="status"><option selected>Pending</option><option>In Progress</option><option>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00118">Note for students</label><br><textarea id="note-FIX-2026-00118" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+<article id="FIX-2026-00117">
+  <h2>Blocked drain outside the Admin block</h2>
+  <p>Reference: FIX-2026-00117<br>Status: <strong>Resolved</strong></p>
+  <h3>Status progress</h3>
+  <ol>
+      <li>Report Submitted (done)</li>
+      <li>In Progress (done)</li>
+      <li>Resolved (current)</li>
+  </ol>
+  <h3>Issue information</h3>
+  <p>Rainwater pools at the entrance because the drain is blocked with leaves and litter.</p>
+  <dl>
+    <dt>Category</dt><dd>Water &amp; Plumbing</dd>
+    <dt>Location</dt><dd>Admin Block, front car park</dd>
+    <dt>Date reported</dt><dd>7 Oct 2026</dd>
+    <dt>Last updated</dt><dd>11 Oct 2026</dd>
+    <dt>Priority</dt><dd>Medium</dd>
+  </dl>
+  <h3>Staff update</h3>
+  <p>Drain cleared and covered with a grate. (11 Oct)</p>
+    <h3>Staff controls</h3>
+    <form method="get" action="#manage">
+      <p><label for="status-FIX-2026-00117">Status</label><br><select id="status-FIX-2026-00117" name="status"><option>Pending</option><option>In Progress</option><option selected>Resolved</option></select></p>
+      <p><label for="note-FIX-2026-00117">Note for students</label><br><textarea id="note-FIX-2026-00117" name="note" rows="4" cols="50" placeholder="e.g. Electrician assigned, parts arrive Friday."></textarea></p>
+      <p><button type="submit">Save update</button></p>
+      <p><small>Prototype: saving needs a server, so nothing is stored in this version.</small></p>
+    </form>
+  <p><a href="#manage">← Back to reports</a></p>
+</article>
+<hr>
+</main>
+<footer>
+  <p><strong>FixIt</strong> – Campus issue reporting for students, by students.</p>
+  <p>© 2026 FixIt. Prototype with demonstration data.</p>
+</footer>
+</body>
+</html>
